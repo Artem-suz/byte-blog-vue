@@ -2,10 +2,6 @@
   <div class="main-page">main-page</div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
