@@ -1,0 +1,15 @@
+.app {
+  font: var(--font-m);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.3s;
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+}
