@@ -1,8 +1,9 @@
-<script setup lang="ts">
-  import { MainPage } from '../pages/MainPage'
+<script setup>
+  import './index.scss'
 </script>
 
 <template>
-  <!-- <router-view/> -->
-  <MainPage />
+  <router-link :to="{ name: 'about' }">about</router-link>
+  <router-link :to="{ name: 'main' }">main</router-link>
+  <router-view />
 </template>
