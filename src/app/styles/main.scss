@@ -1,10 +1,10 @@
 .app {
   font: var(--font-m);
-  background-color: var(--bg-color);
-  color: var(--primary-color);
+  background-color: var(--bg);
+  color: var(--text);
   min-height: 100vh;
   transition:
-    color 0.5s,
+    color 0.3s,
     background-color 0.3s;
 }
 

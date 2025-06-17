@@ -41,9 +41,10 @@
   .sidebar {
     height: 100vh;
     width: var(--sidebar-width);
-    background-color: var(--inverted-bg-color);
+    background-color: var(--light-bg);
     position: relative;
     transition: width 0.3s;
+    border-radius: 0 16px 16px 0;
 
     &.collapsed {
       width: var(--sidebar-width-collapsed);
