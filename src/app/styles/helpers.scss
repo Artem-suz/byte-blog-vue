@@ -1,0 +1,131 @@
+@use 'sass:map';
+
+$width-percent: (
+  '5': 5%,
+  '10': 10%,
+  '15': 15%,
+  '20': 20%,
+  '25': 25%,
+  '30': 30%,
+  '35': 35%,
+  '40': 40%,
+  '45': 45%,
+  '50': 50%,
+  '55': 55%,
+  '60': 60%,
+  '65': 65%,
+  '70': 70%,
+  '75': 75%,
+  '80': 80%,
+  '85': 85%,
+  '90': 90%,
+  '95': 95%,
+  '100': 100%,
+);
+
+@each $key, $value in $width-percent {
+  // генерация классов для определения ширины в %
+  .width-#{$key} {
+    width: $value !important;
+  }
+
+  // установка максимальной ширины в %
+  .max-w-#{$key} {
+    max-width: $value;
+  }
+
+  // устновка flex-basis при необходимости
+  .flex--basis-#{$key} {
+    flex-basis: $value;
+  }
+}
+
+// максимальное значение
+$max-value: 64;
+
+// генерация внешних отступов от 0 до 64px с шагом 4px
+@for $i from 0 through $max-value {
+  @if $i % 4 == 0 {
+    .mt-#{$i} {
+      margin-top: #{$i}px;
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+    .ml-#{$i} {
+      margin-left: #{$i}px;
+    }
+    .mr-#{$i} {
+      margin-right: #{$i}px;
+    }
+    .my-#{$i} {
+      margin-top: #{$i}px;
+      margin-bottom: #{$i}px;
+    }
+    .mx-#{$i} {
+      margin-left: #{$i}px;
+      margin-right: #{$i}px;
+    }
+    .ma-#{$i} {
+      margin: #{$i}px;
+    }
+  }
+}
+
+// генерация внутренних отступов от 0 до 64px с шагом 4px
+@for $i from 0 through $max-value {
+  @if $i % 4 == 0 {
+    .pt-#{$i} {
+      padding-top: #{$i}px;
+    }
+    .pb-#{$i} {
+      padding-bottom: #{$i}px;
+    }
+    .pl-#{$i} {
+      padding-left: #{$i}px;
+    }
+    .pr-#{$i} {
+      padding-right: #{$i}px;
+    }
+    .py-#{$i} {
+      padding-top: #{$i}px;
+      padding-bottom: #{$i}px;
+    }
+    .px-#{$i} {
+      padding-left: #{$i}px;
+      padding-right: #{$i}px;
+    }
+    .pa-#{$i} {
+      padding: #{$i}px;
+    }
+  }
+}
+
+// генерация flex отступов от 0 до 64px с шагом 4px
+@for $i from 0 through $max-value {
+  @if $i % 4 == 0 {
+    .el-flex-gap--#{$i} {
+      gap: #{$i}px;
+    }
+  }
+}
+
+.el-flex {
+  display: flex;
+}
+
+.flex-dir-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}

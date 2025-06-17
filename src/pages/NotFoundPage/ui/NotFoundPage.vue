@@ -1,5 +1,5 @@
 <template>
-  <div class="not-found-page">not-found-page</div>
+  <main class="not-found-page">not-found-page</main>
 </template>
 
 <script setup></script>
