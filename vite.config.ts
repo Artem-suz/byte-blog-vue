@@ -11,5 +11,6 @@ const paths: IBuildPaths = {
 
 export default () => {
   const config = buildViteConfig({ paths })
+
   return defineConfig(config)
 }
