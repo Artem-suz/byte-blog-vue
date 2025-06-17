@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { fileURLToPath, URL } from 'node:url'
-import svgLoader from 'vite-svg-loader'
+import { buildViteConfig } from './config/build/buildViteConfig.ts'
+import type { IBuildPaths } from './config/build/types/config.ts'
+import path from 'path'
 
-export default defineConfig({
-  plugins: [vue(), svgLoader()],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
-})
+const paths: IBuildPaths = {
+  entry: path.resolve(__dirname, 'src', 'app', 'index.ts'),
+  build: path.resolve(__dirname, 'build'),
+  src: path.resolve(__dirname, 'src'),
+}
+
+export default () => {
+  const config = buildViteConfig({ paths })
+  return defineConfig(config)
+}

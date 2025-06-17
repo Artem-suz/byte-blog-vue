@@ -1,11 +1,11 @@
 import type { RouteRecordRaw } from 'vue-router'
 import Sidebar from '@/widgets/Sidebar'
 
-const MainLayout = () => import(/* webpackChunkName: "main-layout" */ '@/app/layouts/MainLayout')
+const MainLayout = () => import('@/app/layouts/MainLayout')
 
-const MainPage = () => import(/* webpackChunkName: "main-page" */ '@/pages/MainPage')
-const AboutPage = () => import(/* webpackChunkName: "about-page" */ '@/pages/AboutPage')
-const NotFoundPage = () => import(/* webpackChunkName: "not-found-page" */ '@/pages/NotFoundPage')
+const MainPage = () => import('@/pages/MainPage')
+const AboutPage = () => import('@/pages/AboutPage')
+const NotFoundPage = () => import('@/pages/NotFoundPage')
 
 export enum AppRoutesName {
   EMPTY = 'empty',
