@@ -1,9 +1,9 @@
 import type { UserConfig } from 'vite'
-import { buildPlugins } from './buildPlugins.ts'
-import { buildResolvers } from './buildResolvers.ts'
-import { buildEnvironmentOptions } from './buildEnvironmentOptions.ts'
+import { buildPlugins } from './buildPlugins'
+import { buildResolvers } from './buildResolvers'
+import { buildEnvironmentOptions } from './buildEnvironmentOptions'
 
-import type { IBuildOptions } from './types/config.ts'
+import type { IBuildOptions } from './types/config'
 
 export function buildViteConfig(options: IBuildOptions): UserConfig {
   return {

@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
-import { buildViteConfig } from './config/build/buildViteConfig.ts'
-import type { IBuildPaths } from './config/build/types/config.ts'
+import { buildViteConfig } from './config/build/buildViteConfig'
+import type { IBuildPaths } from './config/build/types/config'
 import path from 'path'
 
 const paths: IBuildPaths = {
