@@ -29,7 +29,7 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import { AppRoutesName } from '@/app/providers/router/config'
-  import ThemeSwitcher from '@/shared/assets/ui/ThemeSwitcher/ThemeSwitcher.vue'
+  import ThemeSwitcher from '@/shared/ui/ThemeSwitcher'
 
   const isCollapsed = ref(true)
   function toggleSidebar() {

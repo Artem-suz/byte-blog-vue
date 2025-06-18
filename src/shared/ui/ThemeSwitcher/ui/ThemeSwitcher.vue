@@ -11,8 +11,8 @@
   import { PROVIDE_THEME_KEY, PROVIDE_TOGGLE_THEME_KEY } from '@/app/providers/theme/symbols'
   import { THEME } from '@/app/providers/theme/lib/types'
 
-  import LightIcon from '@/shared/assets/icons/i-theme-light.svg'
-  import DarkIcon from '@/shared/assets/icons/i-theme-dark.svg'
+  import LightIcon from './assets/i-light-theme-switcher.svg'
+  import DarkIcon from './assets/i-dark-theme-switcher.svg'
 
   const theme = inject(PROVIDE_THEME_KEY)
   const toggleTheme = inject(PROVIDE_TOGGLE_THEME_KEY)
