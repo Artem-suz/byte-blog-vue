@@ -1,4 +1,5 @@
 import type { RouteRecordRaw } from 'vue-router'
+import { AppRoutesName } from './types'
 import Sidebar from '@/widgets/Sidebar'
 
 const MainLayout = () => import('@/app/layouts/MainLayout')
@@ -6,13 +7,6 @@ const MainLayout = () => import('@/app/layouts/MainLayout')
 const MainPage = () => import('@/pages/MainPage')
 const AboutPage = () => import('@/pages/AboutPage')
 const NotFoundPage = () => import('@/pages/NotFoundPage')
-
-export enum AppRoutesName {
-  EMPTY = 'empty',
-  HOME_PAGE = 'home-page',
-  ABOUT_PAGE = 'about-page',
-  NOT_FOUND_PAGE = 'not-found-page',
-}
 
 export const RoutePath: Record<AppRoutesName, string> = {
   [AppRoutesName.EMPTY]: '/',

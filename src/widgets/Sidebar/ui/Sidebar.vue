@@ -8,13 +8,13 @@
     <nav class="sidebar__nav">
       <ul class="sidebar__nav-list">
         <li class="sidebar__nav-list-item">
-          <router-link class="sidebar__nav-list-item-link" :to="{ name: AppRoutesName.ABOUT_PAGE }">
-            ABOUT
+          <router-link class="sidebar__nav-list-item-link" :to="{ name: AppRoutesName.HOME_PAGE }">
+            <p>{{ $t('sidebar-home') }}</p>
           </router-link>
         </li>
         <li class="sidebar__nav-list-item">
-          <router-link class="sidebar__nav-list-item-link" :to="{ name: AppRoutesName.HOME_PAGE }">
-            HOME
+          <router-link class="sidebar__nav-list-item-link" :to="{ name: AppRoutesName.ABOUT_PAGE }">
+            <p>{{ $t('sidebar-about-us') }}</p>
           </router-link>
         </li>
       </ul>
@@ -22,14 +22,17 @@
 
     <div class="sidebar__switchers el-flex justify-center">
       <ThemeSwitcher />
+      <LangSwitcher />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { AppRoutesName } from '@/app/providers/router/config'
+  import { AppRoutesName } from '@/app/providers/router/config/types'
+
   import ThemeSwitcher from '@/shared/ui/ThemeSwitcher'
+  import LangSwitcher from '@/shared/ui/LangSwitcher'
 
   const isCollapsed = ref(true)
   function toggleSidebar() {
