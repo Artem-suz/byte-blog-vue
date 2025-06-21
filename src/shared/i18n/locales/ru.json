@@ -1,4 +1,8 @@
 {
   "sidebar-home": "Главная",
-  "sidebar-about-us": "О нас"
+  "sidebar-about-us": "О нас",
+
+  "error-page-title": "Упс! Что то пошло не так",
+
+  "button-back": "Назад"
 }

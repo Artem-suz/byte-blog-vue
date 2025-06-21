@@ -24,6 +24,7 @@ export default [
       'vue/multi-word-component-names': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-empty-object-type': 'warn',
+      'no-undef': 'warn',
       'padding-line-between-statements': [
         'warn',
         { blankLine: 'always', prev: '*', next: 'return' },

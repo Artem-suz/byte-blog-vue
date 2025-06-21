@@ -1,4 +1,7 @@
 {
   "sidebar-home": "Home",
-  "sidebar-about-us": "About us"
+  "sidebar-about-us": "About us",
+
+  "error-page-title": "Oops! Something went wrong",
+  "button-back": "Back"
 }

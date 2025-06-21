@@ -38,6 +38,11 @@ $width-percent: (
   .flex--basis-#{$key} {
     flex-basis: $value;
   }
+
+  // генерация классов для определения ширины в %
+  .height-#{$key} {
+    height: $value !important;
+  }
 }
 
 // максимальное значение

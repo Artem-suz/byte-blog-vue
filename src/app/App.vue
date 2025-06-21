@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { inject } from 'vue'
   import './index.scss'
   import { PROVIDE_THEME_KEY } from '@/app/providers/theme/symbols'
