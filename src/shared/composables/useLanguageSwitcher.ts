@@ -1,6 +1,8 @@
 import { useI18n } from 'vue-i18n'
 import { loadLocaleMessages, EnumLanguageLocales } from '@/app/providers/i18n/utils'
 
+export const LOCAL_STORAGE_LANG_KEY = 'lang'
+
 export function useLanguageSwitcher() {
   const { locale, availableLocales, setLocaleMessage } = useI18n()
 
@@ -11,6 +13,7 @@ export function useLanguageSwitcher() {
     }
 
     locale.value = newlocale
+    localStorage.setItem(LOCAL_STORAGE_LANG_KEY, newlocale)
   }
 
   return { changeLanguage }

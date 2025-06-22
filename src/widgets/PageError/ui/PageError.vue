@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { defineEmits } from 'vue'
   import PrimaryButton from '@/shared/ui/Button/PrimaryButton'
 
@@ -17,5 +17,3 @@
     emit('go-back')
   }
 </script>
-
-<style></style>

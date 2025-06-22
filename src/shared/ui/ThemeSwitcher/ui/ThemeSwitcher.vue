@@ -17,5 +17,3 @@
   const theme = inject(PROVIDE_THEME_KEY)
   const toggleTheme = inject(PROVIDE_TOGGLE_THEME_KEY)
 </script>
-
-<style lang="scss"></style>
