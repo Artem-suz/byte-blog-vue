@@ -1,0 +1,5 @@
+- VUE3
+- TypeScript
+- Vite
+- i18n
+- Vitest
