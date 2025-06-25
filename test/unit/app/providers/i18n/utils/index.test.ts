@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { it, describe, expect } from 'vitest'
 import { loadLocaleMessages } from '@/app/providers/i18n/utils'
 
 describe('loadLocaleMessages', () => {
