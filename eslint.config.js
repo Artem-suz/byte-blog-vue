@@ -1,3 +1,4 @@
+import storybook from 'eslint-plugin-storybook'
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import vueParser from 'vue-eslint-parser'
@@ -20,7 +21,6 @@ export default [
       },
     },
   },
-
   // конфиг тестовых файлов
   {
     files: ['test/**/*.test.{ts}'],
@@ -43,7 +43,6 @@ export default [
       'vitest/no-identical-title': 'error',
     },
   },
-
   // основные правила
   {
     rules: {
@@ -58,4 +57,5 @@ export default [
       ],
     },
   },
+  ...storybook.configs['flat/recommended'],
 ]
