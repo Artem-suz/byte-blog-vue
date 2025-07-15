@@ -16,7 +16,7 @@
     hasError.value = isError
   }
 
-  onErrorCaptured((err, vm, info) => {
+  onErrorCaptured((err, _vm, info) => {
     setDisplayPageError(true)
     console.error(info, err)
 

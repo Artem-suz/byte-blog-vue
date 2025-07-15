@@ -1,0 +1,1 @@
+{"root":["./test/setup.ts","./test/unit/app/providers/i18n/utils/index.test.ts","./test/unit/shared/ui/button/primarybutton/primarybutton.test.ts","./vitest.config.ts"],"errors":true,"version":"5.8.3"}
