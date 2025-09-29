@@ -1,29 +1,70 @@
 <template>
-  <div
-    class="sidebar el-flex flex-dir-col justify-between align-center"
-    :class="{ collapsed: isCollapsed }"
-  >
-    <button class="sidebar__toggle-button" type="button" @click="toggleSidebar">TOGGLE</button>
+  <div class="sidebar el-flex justify-between align-center" :class="{ collapsed: isCollapsed }">
+    <div class="el-flex flex-dir-col">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__nav-list">
+          <li class="sidebar__nav-list-item active">
+            <router-link
+              class="sidebar__nav-list-item-link el-flex el-flex-gap--12"
+              :to="{ name: AppRoutesName.HOME_PAGE }"
+            >
+              <HomeIcon class="icon" />
+              <Transition name="fade-left">
+                <p v-show="!isCollapsed">{{ $t('sidebar-home') }}</p>
+              </Transition>
+            </router-link>
+          </li>
 
-    <nav class="sidebar__nav">
-      <ul class="sidebar__nav-list">
-        <li class="sidebar__nav-list-item">
-          <router-link class="sidebar__nav-list-item-link" :to="{ name: AppRoutesName.HOME_PAGE }">
-            <p>{{ $t('sidebar-home') }}</p>
-          </router-link>
-        </li>
-        <li class="sidebar__nav-list-item">
-          <router-link class="sidebar__nav-list-item-link" :to="{ name: AppRoutesName.ABOUT_PAGE }">
-            <p>{{ $t('sidebar-about-us') }}</p>
-          </router-link>
-        </li>
-      </ul>
-    </nav>
+          <li class="sidebar__nav-list-item">
+            <router-link
+              class="sidebar__nav-list-item-link el-flex el-flex-gap--12"
+              :to="{ name: AppRoutesName.ABOUT_PAGE }"
+            >
+              <InfoIcon class="icon" />
+              <Transition name="fade-left">
+                <p v-show="!isCollapsed">{{ $t('sidebar-about-us') }}</p>
+              </Transition>
+            </router-link>
+          </li>
 
-    <div class="sidebar__switchers el-flex justify-center">
-      <ThemeSwitcher />
-      <LangSwitcher />
+          <li class="sidebar__nav-list-item">
+            <router-link
+              class="sidebar__nav-list-item-link el-flex el-flex-gap--12"
+              :to="{ name: AppRoutesName.HOME_PAGE }"
+            >
+              <AvatarIcon class="icon" />
+              <Transition name="fade-left">
+                <p v-show="!isCollapsed">{{ $t('sidebar-profile') }}</p>
+              </Transition>
+            </router-link>
+          </li>
+
+          <li class="sidebar__nav-list-item">
+            <router-link
+              class="sidebar__nav-list-item-link el-flex el-flex-gap--12"
+              :to="{ name: AppRoutesName.HOME_PAGE }"
+            >
+              <PaperIcon class="icon" />
+              <Transition name="fade-left">
+                <p v-show="!isCollapsed">{{ $t('sidebar-articles') }}</p>
+              </Transition>
+            </router-link>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        class="sidebar__switchers el-flex justify-center align-center"
+        :class="{ 'flex-dir-col-reverse': isCollapsed }"
+      >
+        <ThemeSwitcher />
+        <LangSwitcher />
+      </div>
     </div>
+
+    <button class="sidebar__toggle-button pl-12 pr-12" type="button" @click="toggleSidebar">
+      <ArrowIcon class="icon" />
+    </button>
   </div>
 </template>
 
@@ -33,6 +74,11 @@
 
   import ThemeSwitcher from '@/shared/ui/ThemeSwitcher'
   import LangSwitcher from '@/shared/ui/LangSwitcher'
+  import ArrowIcon from '@/shared/assets/icons/i-arrow.svg'
+  import AvatarIcon from '@/shared/assets/icons/i-avatar.svg'
+  import HomeIcon from '@/shared/assets/icons/i-home.svg'
+  import InfoIcon from '@/shared/assets/icons/i-info.svg'
+  import PaperIcon from '@/shared/assets/icons/i-paper.svg'
 
   const isCollapsed = ref(true)
   function toggleSidebar() {
@@ -48,14 +94,21 @@
     position: relative;
     transition: width 0.3s;
     border-radius: 0 16px 16px 0;
+    overflow: hidden;
 
     &.collapsed {
       width: var(--sidebar-width-collapsed);
+
+      & .sidebar__toggle-button .icon {
+        transform: rotate(180deg);
+      }
     }
 
     &__toggle-button {
-      position: absolute;
-      top: 20px;
+      height: 100%;
+      &:hover {
+        background: linear-gradient(to left, var(--accent), 5%, rgba(0, 0, 0, 0));
+      }
     }
 
     &__nav {
@@ -64,9 +117,31 @@
       width: 100%;
     }
 
+    &__nav-list-item {
+      position: relative;
+      height: 40px;
+    }
+
+    &__nav-list-item:hover,
+    &__nav-list-item.active {
+      color: var(--accent);
+      background: linear-gradient(to right, var(--accent), 5%, rgba(0, 0, 0, 0));
+      &::before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        left: 0px;
+        background: currentColor;
+      }
+    }
+
     &__nav-list-item-link {
-      display: block;
       padding: 8px 16px 8px 16px;
+    }
+
+    &__nav-list-item-link .icon {
+      width: 20px;
     }
 
     &__switchers {

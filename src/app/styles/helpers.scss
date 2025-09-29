@@ -123,6 +123,10 @@ $max-value: 64;
   flex-direction: column;
 }
 
+.flex-dir-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .justify-between {
   justify-content: space-between;
 }
